@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Red Hat Display", sans-serif;
+  --font-body: "Outfit", sans-serif;
+
+  --color-primary: #5312d8;
+  --color-primary-container: #6c3cf0;
+  --color-on-primary: #ffffff;
+  --color-surface: #f9f9fd;
+  --color-on-surface: #1a1c1f;
+  --color-on-surface-variant: #494455;
+  --color-outline-variant: #cac3d8;
+  --color-primary-fixed: #e7deff;
+  --color-on-primary-fixed: #1f005f;
+  --color-surface-container-low: #f3f3f7;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap');
+
+  body {
+    @apply font-body bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #5312d8, #9B6BFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient {
+  background: linear-gradient(45deg, #5312d8, #6c3cf0);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  filter: brightness(1.1);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.custom-shadow {
+  box-shadow: 0 40px 100px -20px rgba(74, 56, 135, 0.08);
+}
